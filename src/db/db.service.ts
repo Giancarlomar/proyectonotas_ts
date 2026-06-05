@@ -3,7 +3,7 @@ import { join } from "path";
 import { Note } from "../note/note.interface.js";
 import { NoteCategory } from "../note/note.types.js";
 
-const DB_PATH = join(process.cwd(), "data.json");
+const JsonPath = join(process.cwd(), "data.json");
 
 interface SerializedNote {
   id: number;
@@ -20,7 +20,7 @@ interface DbSchema {
 
 export class DbService {
   async load(): Promise<Note[]> {
-    const content = await readFile(DB_PATH, "utf-8");
+    const content = await readFile(JsonPath, "utf-8");
     const data: DbSchema = JSON.parse(content);
 
     return data.notes.map((note) => ({
@@ -36,11 +36,11 @@ export class DbService {
       title: note.title,
       content: note.content,
       category: note.category,
-      created_at: note.created_at.toISOString(),
-      updated_at: note.updated_at.toISOString(),
+      created_at: note.created_at.toString(),
+      updated_at: note.updated_at.toString(),
     }));
 
     const data: DbSchema = { notes: serialized };
-    await writeFile(DB_PATH, JSON.stringify(data, null, 2), "utf-8");
+    await writeFile(JsonPath, JSON.stringify(data, null, 2), "utf-8");
   }
 }
