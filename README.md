@@ -9,13 +9,6 @@ npm install
 npm run dev
 ```
 
-Para compilar y ejecutar en producción:
-
-```
-npm run build
-npm start
-```
-
 ## Uso
 
 Al iniciar el programa verás un menú con las siguientes opciones:
