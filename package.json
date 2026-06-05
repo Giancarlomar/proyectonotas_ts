@@ -1,0 +1,21 @@
+{
+  "name": "gestor-notas",
+  "version": "1.0.0",
+  "description": "Gestor de notas CLI con TypeScript",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "Giancarlo Llerena",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.9",
+    "@types/node": "^25.9.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}
